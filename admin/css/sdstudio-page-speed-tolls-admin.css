@@ -1,0 +1,10 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+ 
+ li#wp-admin-bar-wp_mail_bank {
+    display: none !important;
+}
+
+/* #wp-admin-bar-site-name { display:none !important;} */

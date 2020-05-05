@@ -1,0 +1,12 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+ 
+  li#wp-admin-bar-wp_mail_bank,
+li#wp-admin-bar-theme-dashboard  {
+    display: none !important;
+}
+
+/* #wp-admin-bar-site-name { display:none } */
+/* #wp-admin-bar-site-name { display:block !important;} */
