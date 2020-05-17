@@ -40,7 +40,7 @@ $SDStudio_linkedin_com = 'https://www.linkedin.com/public-profile/settings?trk=d
 
 
 
-if ( !function_exists( 'run_prettify' ) ){
+if ( !function_exists( 'run_prettify' ) && is_admin()){
 
     add_action( 'wp_enqueue_scripts', 'run_prettify' );
 
