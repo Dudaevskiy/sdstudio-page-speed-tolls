@@ -410,7 +410,8 @@ Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
 
 //dd($MarkDownImageFolder);
 //$MarkDownImageFolder = 'plugins/sdstudio-page-speed-tolls/_markdown/images/drafts.jpg'
-//$img_drafts = '<img src="'.$MarkDownImageFolder_sdstudio_page_speed_tolls.'drafts.jpg">';
+//$OO1_Saxon_icons2 = '<img src="'.$MarkDownImageFolder_sdstudio_page_speed_tolls.'001_Saxon_icons2.woff2.jpg">';
+//dd($OO1_Saxon_icons2);
 //$img_drafts_front = '<img src="'.$MarkDownImageFolder_sdstudio_page_speed_tolls.'drafts_frontend.jpg">';
 $section = [
     'title' => __( 'Поиск и замена в RAW теле страницы', 'sdstudio-page-speed-tolls' ),
@@ -538,6 +539,45 @@ $section = [
             //                                'desc' => '<br><br>',
             'default'  => false,
         ],
+
+    ],
+//    'desc'  => __( 'После включения данной опции появляется возможность поиска и замены .jpg,.jpeg,.png путей к изображениям во всем HTML страницы. Все выполняется перед отображением страницы в браузере. ', 'your-domain-here' ),
+
+];
+Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
+
+
+$section = [
+    'title' => __( 'FIXы для Тем', 'sdstudio-page-speed-tolls' ),
+    'id'    => 'FIXES_THEMES_sdstudio-page-speed-tolls',
+    'subsection' => false,
+    // Иконки брать здесь
+    // http://elusiveicons.com/icons/
+    'icon'  => 'el el-eye-open',
+    'fields' => [
+        [
+            //Link: https://docs.redux.io/core-fields/switch.html
+            'id'       => 'FIXES_THEMES__SAXON_sdstudio-page-speed-tolls',
+            'type'     => 'switch',
+            'title'    => __('Saxon', 'sdstudio-page-speed-tolls'),
+//            'subtitle' => $img_drafts,
+            'desc'  => __('Влючить фиксы для темы Saxon. Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
+//                'required' => array('enable_sweetalert2', '=', 'true' ),
+            //                                'desc' => '<br><br>',
+            'default'  => false,
+        ],
+
+            [
+                //Link: https://docs.redux.io/core-fields/switch.html
+                'id'       => 'FIXES_THEMES__SAXON_icons2_woff2_sdstudio-page-speed-tolls',
+                'type'     => 'switch',
+                'title'    => __('ajax search pro - Перенос icons2.woff2 в тело HTML с preload ', 'sdstudio-page-speed-tolls'),
+//                'subtitle' => $OO1_Saxon_icons2,
+                'desc'  => __('Влючить фикс ajax-search-pro. Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
+                'required' => array('FIXES_THEMES__SAXON_sdstudio-page-speed-tolls', '=', 'true' ),
+                //                                'desc' => '<br><br>',
+                'default'  => false,
+            ],
 
     ],
 //    'desc'  => __( 'После включения данной опции появляется возможность поиска и замены .jpg,.jpeg,.png путей к изображениям во всем HTML страницы. Все выполняется перед отображением страницы в браузере. ', 'your-domain-here' ),

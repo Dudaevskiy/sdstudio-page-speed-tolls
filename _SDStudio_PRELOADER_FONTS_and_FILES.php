@@ -7,7 +7,7 @@
  *
  */
 
-add_action('wp_head', 'PRELOAD_FONTS_and_FILES', 100);
+//add_action('wp_head', 'PRELOAD_FONTS_and_FILES', 100);
 function PRELOAD_FONTS_and_FILES()
 {
     echo "<script>
@@ -64,31 +64,4 @@ function PRELOAD_FONTS_and_FILES()
 
 
 ";
-}
-
-
-
-
-
-add_action('wp_head', 'my_custom_styles', 100);
-function my_custom_styles()
-{
-    echo "<style>
-            @font-face {
-                    font-family: \"asppsicons2\";
-                    font-display: swap !important;
-                    font-weight: normal;
-                    font-style: normal;
-                    src: local('asppsicons2'), url('https://devtechblog.sdstudio.top/wp-content/plugins/ajax-search-pro/css/fonts/icons/icons2.woff2') format('woff2');
-                    src: url('https://devtechblog.sdstudio.top/wp-content/plugins/ajax-search-pro/css/fonts/icons/icons2.eot');
-                    src: url('https://devtechblog.sdstudio.top/wp-content/plugins/ajax-search-pro/css/fonts/icons/icons2.eot?#iefix') format('embedded-opentype'),
-                    url('https://devtechblog.sdstudio.top/wp-content/plugins/ajax-search-pro/css/fonts/icons/icons2.woff2') format('woff2'),
-                    url('https://devtechblog.sdstudio.top/wp-content/plugins/ajax-search-pro/css/fonts/icons/icons2.woff') format('woff'),
-                    url('https://devtechblog.sdstudio.top/wp-content/plugins/ajax-search-pro/css/fonts/icons/icons2.ttf') format('truetype'),
-                    url('https://devtechblog.sdstudio.top/wp-content/plugins/ajax-search-pro/css/fonts/icons/icons2.svg#icons') format('svg');
-                }
-          </style>";
-
-    echo "<link rel=\"preload\" href=\"https://devtechblog.sdstudio.top/wp-content/plugins/ajax-search-pro/css/fonts/icons/icons2.woff2\" as=\"font\" type=\"font/woff2\" crossorigin>";
-
 }
