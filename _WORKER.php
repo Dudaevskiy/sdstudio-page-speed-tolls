@@ -767,7 +767,6 @@ $section = [
             //                                'desc' => '<br><br>',
             'default'  => false,
         ],
-<<<<<<< HEAD
 
         /**
          * Стили
@@ -805,17 +804,6 @@ $section = [
             'show'          => array(
                 'title'       => true,
                 'description' => false,
-=======
-        [
-            'id'          => 'opt-slides',
-            'type'        => 'slides',
-//            'title'       => __('Slides Options', 'redux-framework-demo'),
-            'subtitle'    => __('Unlimited slides with drag and drop sortings.', 'redux-framework-demo'),
-            'desc'        => __('This field will store all slides values into a multidimensional array to use into a foreach loop.', 'redux-framework-demo'),
-            'show'          => array(
-                'title'       => true,
-                'description' => true,
->>>>>>> 41d5b5536b16de619ce3d0628ee2286812e4b13a
                 'url'         => true,
             ),
             'placeholder' => [
