@@ -6,6 +6,7 @@
  li#wp-admin-bar-wp_mail_bank {
     display: none !important;
 }
+<<<<<<< HEAD
 /**
 Скрываем UPLOAD для Шрифтов
  */
@@ -18,4 +19,10 @@ fieldset#redux_sdstudio_page_speed_tolls-opt-slides span.button.media_upload_but
 fieldset#redux_sdstudio_page_speed_tolls-css_styles-slides span.button.media_upload_button{
     display: none;
 }
+=======
+
+fieldset#redux_sdstudio_page_speed_tolls-opt-slides span.button.media_upload_button{
+    display: none;
+}
+>>>>>>> 41d5b5536b16de619ce3d0628ee2286812e4b13a
 /* #wp-admin-bar-site-name { display:none !important;} */
