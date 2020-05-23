@@ -584,6 +584,51 @@ $section = [
 
 ];
 Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
+
+
+/**
+ * ELEMENTOR
+ */
+
+$section = [
+    'title' => __( 'Elementor FIXs', 'sdstudio-page-speed-tolls' ),
+    'id'    => 'FIXES_ELEMENTOR_sdstudio-page-speed-tolls',
+    'subsection' => false,
+    // Иконки брать здесь
+    // http://elusiveicons.com/icons/
+    'icon'  => 'el el-eye-open',
+    'fields' => [
+        [
+            //Link: https://docs.redux.io/core-fields/switch.html
+            'id'       => 'ENABLE_FIXES_ELEMENTOR_sdstudio-page-speed-tolls',
+            'type'     => 'switch',
+            'title'    => __('Elementor фиксы', 'sdstudio-page-speed-tolls'),
+//            'subtitle' => $img_drafts,
+            'desc'  => __('Влючить фиксы для плагина Elementor. Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
+//                'required' => array('enable_sweetalert2', '=', 'true' ),
+            //                                'desc' => '<br><br>',
+            'default'  => false,
+        ],
+
+        [
+            //Link: https://docs.redux.io/core-fields/switch.html
+            'id'       => 'DISABLE_Google_Fonts_FIXES_ELEMENTOR_sdstudio-page-speed-tolls',
+            'type'     => 'switch',
+            'title'    => __('Отключить шрифты Google Fonts используемые Elementor', 'sdstudio-page-speed-tolls'),
+//                'subtitle' => $OO1_Saxon_icons2,
+            'desc'  => __('<a href="https://techblog.sdstudio.top/kak-uskorit-rabotu-sajta-elementor-dlja-pagespeed-insights-3-poleznyh-soveta/#1_Ne_zagruzajte_Google_Fonts_ot_Elementor1_Ne_zagruzajte_Google_Fonts_ot_Elementor1_Ne_zagruzajte_Google_Fonts_ot_Elementor" target="_blank">Подробнее здесь</a>. Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
+            'required' => array('ENABLE_FIXES_ELEMENTOR_sdstudio-page-speed-tolls', '=', 'true' ),
+            //                                'desc' => '<br><br>',
+            'default'  => false,
+        ],
+
+    ],
+//    'desc'  => __( 'После включения данной опции появляется возможность поиска и замены .jpg,.jpeg,.png путей к изображениям во всем HTML страницы. Все выполняется перед отображением страницы в браузере. ', 'your-domain-here' ),
+
+];
+Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
+
+
 /*
  * <--- END SECTIONS
  */

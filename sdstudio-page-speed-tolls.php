@@ -110,7 +110,7 @@ function run_sdstudio_page_speed_tolls() {
 
     require_once plugin_dir_path( __FILE__ ) . '_WORKER.php';
 //    require_once plugin_dir_path( __FILE__ ) . '_SDStudio_FILE_TYPES_SUPPORT.php';
-//    require_once plugin_dir_path( __FILE__ ) . '_SDStudio_ELEMENTOR.php';
+    require_once plugin_dir_path( __FILE__ ) . '_SDStudio_ELEMENTOR.php';
     require_once plugin_dir_path( __FILE__ ) . '_SDStudio_DEREGISTER_STYLES.php';
 //    require_once plugin_dir_path( __FILE__ ) . '_SDStudio_PRELOADER_FONTS_and_FILES.php';
 //    require_once plugin_dir_path( __FILE__ ) . '_SDStudio_GOOGLE_TAG_MANAGER.php';
