@@ -63,6 +63,7 @@ if ($ENABLE_FIXES_ELEMENTOR_sdstudio_page_speed_tolls == 1){
 
     /**
      * $DISABLE_Eicons
+     * https://gist.github.com/julian-stark
      */
     if ($DISABLE_Eicons_FIXES_ELEMENTOR_sdstudio_page_speed_tolls == 1){
 // Deactivate Eicons at Elementor

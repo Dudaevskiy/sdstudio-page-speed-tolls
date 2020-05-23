@@ -116,8 +116,10 @@ function run_sdstudio_page_speed_tolls() {
 //    require_once plugin_dir_path( __FILE__ ) . '_SDStudio_GOOGLE_TAG_MANAGER.php';
     require_once plugin_dir_path( __FILE__ ) . '_SDStudio_WEBP.php';
 //    require_once plugin_dir_path( __FILE__ ) . '_SDStudio_custom_admin_title.php';
-    require_once plugin_dir_path( __FILE__ ) . '_SDStudio_Font_Awesome.php';
+//    require_once plugin_dir_path( __FILE__ ) . '_SDStudio_Font_Awesome.php';
+    require_once plugin_dir_path( __FILE__ ) . '_SDStudio_PLUGIN_Popus.php';
     require_once plugin_dir_path( __FILE__ ) . '_SDStudio_PLUGIN_Highlight_and_Share.php';
+    require_once plugin_dir_path( __FILE__ ) . '_SDStudio_THEMES_FIXs__ASTRA.php';
     require_once plugin_dir_path( __FILE__ ) . '_SDStudio_THEMES_FIXs__SAXON.php';
 
 

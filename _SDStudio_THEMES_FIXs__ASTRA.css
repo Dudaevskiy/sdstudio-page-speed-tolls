@@ -1,0 +1,71 @@
+.astra-search-icon::before {
+    content: "\e8b6";
+    font-family:  "Font Awesome 5 Free" !Important;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: inherit;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+.ast-header-break-point .main-navigation ul.children li a:before,.ast-header-break-point .main-navigation ul.sub-menu li a:before {
+    /*     content: "\e900"; */
+    content: "\f106" !Important;
+    font-weight: 800;
+    font-family:  "Font Awesome 5 Free" !Important;
+    font-size: .65em;
+    text-decoration: inherit;
+    display: inline-block;
+    transform: translate(0,-2px) rotateZ(270deg);
+    margin-right: 5px;
+
+
+}
+
+/* ✅ */
+.ast-button-wrap .menu-toggle .menu-toggle-icon:before {
+    content: "\f0c9" !important;
+    font-family:  "Font Awesome 5 Free" !Important;
+    text-decoration: inherit;
+    font-weight: 800;
+}
+
+/* ✅ */
+.ast-button-wrap .menu-toggle.toggled .menu-toggle-icon:before,
+.ast-fullscreen-menu-enable.ast-header-break-point .main-header-bar-navigation .close:after {
+    content: "\f00d" !Important;
+    font-family:  "Font Awesome 5 Free" !Important;
+    text-decoration: inherit;
+    font-weight: 800;
+}
+
+/* ✅ */
+.ast-scroll-top-icon::before {
+    content: "\f103" !Important;
+    font-family:  "Font Awesome 5 Free" !Important;
+    text-decoration: inherit;
+    font-weight: 800;
+}
+
+body .main-header-bar .main-header-bar-navigation .menu-item-has-children>a:after,
+body .main-header-bar .main-header-bar-navigation .page_item_has_children>a:after {
+    content: "\f106" !Important;
+    display: inline-block;
+    font-family:  "Font Awesome 5 Free" !Important;
+    font-size: 9px;
+    font-size: .6rem;
+    font-weight: 800 !important;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-left: 10px;
+    line-height: normal
+}
+
+.ast-header-break-point .main-header-bar .main-header-bar-navigation .menu-item-has-children>.ast-menu-toggle::before,.ast-header-break-point .main-header-bar .main-header-bar-navigation .page_item_has_children>.ast-menu-toggle::before {
+    font-weight: 800 !Important;
+    content: "\f106" !Important;
+    font-family:  "Font Awesome 5 Free" !Important;
+    text-decoration: inherit;
+    display: inline-block
+}

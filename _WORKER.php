@@ -480,6 +480,10 @@ $section = [
     'icon'  => 'el el-puzzle',
     'fields' => [
         [
+            /**
+             * Highlight_and_Share
+             */
+
             //Link: https://docs.redux.io/core-fields/switch.html
             'id'       => 'ENABLE_FIXES_PLUGINS_Highlight_and_Share_sdstudio-page-speed-tolls',
             'type'     => 'switch',
@@ -513,6 +517,23 @@ $section = [
                 'default'  => false,
             ],
 
+
+        [
+            /**
+             * Popups
+             */
+
+            //Link: https://docs.redux.io/core-fields/switch.html
+            'id'       => 'ENABLE_FIXES_PLUGINS_Popups_sdstudio-page-speed-tolls',
+            'type'     => 'switch',
+            'title'    => __('Popups - Отключить шрифт spufont.woff плагина', 'sdstudio-page-speed-tolls'),
+//            'subtitle' => $img_drafts,
+            'desc'  => __('Дополнительные фикс для плагина Popups. Для отключения стандартного файла стилей, в котором используется шрифт spufont.woff. Файл мелкий, но дает дополнительную нагрузку при получении страницы браузером. Место иконок используемых spufont.woff, в файле данного плагина _SDStudio_PLUGIN_Popus.css прописано правило для использования шрифта Font Awesome 5. Ну и изменены стили только для кнопкти закрытия попап окна. Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
+//                'required' => array('enable_sweetalert2', '=', 'true' ),
+            //                                'desc' => '<br><br>',
+            'default'  => false,
+        ],
+
     ],
     'desc'  => __( 'Дополнительные фиксы к разным плагинам, для ускорения, или устранения ошибок связанных с ними ', 'your-domain-here' ),
 
@@ -520,6 +541,9 @@ $section = [
 Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
 
 
+/**
+ * Font Awesome 5
+ */
 $section = [
     'title' => __( 'Font Awesome 5', 'sdstudio-page-speed-tolls' ),
     'id'    => 'Font_Awesome_5_sdstudio-page-speed-tolls',
@@ -547,8 +571,11 @@ $section = [
 Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
 
 
+/**
+ * THEMEs FIXs
+ */
 $section = [
-    'title' => __( 'FIXы для Тем', 'sdstudio-page-speed-tolls' ),
+    'title' => __( 'THEMEs FIXs', 'sdstudio-page-speed-tolls' ),
     'id'    => 'FIXES_THEMES_sdstudio-page-speed-tolls',
     'subsection' => false,
     // Иконки брать здесь
