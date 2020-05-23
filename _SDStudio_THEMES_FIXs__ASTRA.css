@@ -49,7 +49,8 @@
 
 body .main-header-bar .main-header-bar-navigation .menu-item-has-children>a:after,
 body .main-header-bar .main-header-bar-navigation .page_item_has_children>a:after {
-    content: "\f106" !Important;
+    /*content: "\f106" !Important;*/
+    content: "\f107" !Important;
     display: inline-block;
     font-family:  "Font Awesome 5 Free" !Important;
     font-size: 9px;
