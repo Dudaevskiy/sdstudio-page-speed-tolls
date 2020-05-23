@@ -622,6 +622,30 @@ $section = [
             'default'  => false,
         ],
 
+        [
+            //Link: https://docs.redux.io/core-fields/switch.html
+            'id'       => 'DISABLE_Font_Awesome_FIXES_ELEMENTOR_sdstudio-page-speed-tolls',
+            'type'     => 'switch',
+            'title'    => __('Отключить шрифты Font Awesome используемые Elementor', 'sdstudio-page-speed-tolls'),
+//                'subtitle' => $OO1_Saxon_icons2,
+            'desc'  => __('<a href="https://techblog.sdstudio.top/kak-uskorit-rabotu-sajta-elementor-dlja-pagespeed-insights-3-poleznyh-soveta/#1_Ne_zagruzajte_Google_Fonts_ot_Elementor1_Ne_zagruzajte_Google_Fonts_ot_Elementor1_Ne_zagruzajte_Google_Fonts_ot_Elementor" target="_blank">Подробнее здесь</a>. После включения опции, плагин произведет отключенеи шрифтов Font Awesome используемые Elementor, и подключит свой набор шрифтов Font Awesome 5 .Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
+            'required' => array('ENABLE_FIXES_ELEMENTOR_sdstudio-page-speed-tolls', '=', 'true' ),
+            //                                'desc' => '<br><br>',
+            'default'  => false,
+        ],
+
+        [
+            //Link: https://docs.redux.io/core-fields/switch.html
+            'id'       => 'DISABLE_Eicons_FIXES_ELEMENTOR_sdstudio-page-speed-tolls',
+            'type'     => 'switch',
+            'title'    => __('Отключить шрифты Eicons используемые Elementor на фронтеде', 'sdstudio-page-speed-tolls'),
+//                'subtitle' => $OO1_Saxon_icons2,
+            'desc'  => __('<a href="https://techblog.sdstudio.top/kak-uskorit-rabotu-sajta-elementor-dlja-pagespeed-insights-3-poleznyh-soveta/#3_Zamenite_ikonki_Elementor_Eicons_sriftami_Awesome_Icons" target="_blank">Подробнее здесь</a>. После включения опции, плагин произведет отключенеи шрифта Eicons используемого Elementor. Шрифт будет отключен если пользователь не администратор сайта. В случае входа на сайт администратора, шрифт будет подключен. Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
+            'required' => array('ENABLE_FIXES_ELEMENTOR_sdstudio-page-speed-tolls', '=', 'true' ),
+            //                                'desc' => '<br><br>',
+            'default'  => false,
+        ],
+
     ],
 //    'desc'  => __( 'После включения данной опции появляется возможность поиска и замены .jpg,.jpeg,.png путей к изображениям во всем HTML страницы. Все выполняется перед отображением страницы в браузере. ', 'your-domain-here' ),
 

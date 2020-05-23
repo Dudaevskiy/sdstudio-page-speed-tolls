@@ -16,6 +16,20 @@ $ENABLE_FIXES_ELEMENTOR_sdstudio_page_speed_tolls = $redux['ENABLE_FIXES_ELEMENT
 global $DISABLE_Google_Fonts_FIXES_ELEMENTOR_sdstudio_page_speed_tolls;
 $DISABLE_Google_Fonts_FIXES_ELEMENTOR_sdstudio_page_speed_tolls = $redux['DISABLE_Google_Fonts_FIXES_ELEMENTOR_sdstudio-page-speed-tolls'];
 
+/**
+ * $DISABLE_Font_Awesome
+ */
+global $DISABLE_Font_Awesome_FIXES_ELEMENTOR_sdstudio_page_speed_tolls;
+$DISABLE_Font_Awesome_FIXES_ELEMENTOR_sdstudio_page_speed_tolls = $redux['DISABLE_Font_Awesome_FIXES_ELEMENTOR_sdstudio-page-speed-tolls'];
+
+/**
+ * $DISABLE_Eicons
+ */
+global $DISABLE_Eicons_FIXES_ELEMENTOR_sdstudio_page_speed_tolls;
+$DISABLE_Eicons_FIXES_ELEMENTOR_sdstudio_page_speed_tolls = $redux['DISABLE_Eicons_FIXES_ELEMENTOR_sdstudio-page-speed-tolls'];
+
+//dd($DISABLE_Eicons_FIXES_ELEMENTOR_sdstudio_page_speed_tolls);
+
 if ($ENABLE_FIXES_ELEMENTOR_sdstudio_page_speed_tolls == 1){
 //
 /**
@@ -23,12 +37,46 @@ if ($ENABLE_FIXES_ELEMENTOR_sdstudio_page_speed_tolls == 1){
  */
 
     /**
-     * ENABLE_FIXES_ELEMENTOR
+     * DISABLE_Google_Fonts
      */
-//    dd($DISABLE_Google_Fonts_FIXES_ELEMENTOR_sdstudio_page_speed_tolls);
     if ($DISABLE_Google_Fonts_FIXES_ELEMENTOR_sdstudio_page_speed_tolls == 1){
         add_filter( 'elementor/frontend/print_google_fonts', '__return_false' );
     }
+
+    /**
+     * DISABLE_Font_Awesome
+     */
+    if ($DISABLE_Font_Awesome_FIXES_ELEMENTOR_sdstudio_page_speed_tolls == 1){
+        // Старый вариант
+        //add_action( 'wp_enqueue_scripts', function() { wp_dequeue_style( 'font-awesome' ); }, 50 );
+        //add_action( 'elementor/frontend/after_enqueue_styles', function() { wp_dequeue_style( 'font-awesome' ); } );
+
+        add_action( 'elementor/frontend/after_enqueue_styles', function () { wp_dequeue_style( 'font-awesome' ); } );
+        add_action( 'wp_enqueue_scripts', 'replace_font_awesome', 3 );
+
+        function replace_font_awesome() {
+            // Получаем URL сайта
+            wp_enqueue_style( 'font-awesome', sdstudio_page_speed_tolls__PLUGIN_URL.'sdstudio-page-speed-tolls/_Font_Awesome/5.11.2/css/all.css' );
+            //wp_enqueue_style( 'font-awesome', $SiteURL.'/wp-content/fonts/swift-performance/fontawesome/webfont.css' );
+        }
+    }
+
+    /**
+     * $DISABLE_Eicons
+     */
+    if ($DISABLE_Eicons_FIXES_ELEMENTOR_sdstudio_page_speed_tolls == 1){
+// Deactivate Eicons at Elementor
+        add_action( 'elementor/frontend/after_enqueue_styles', 'js_dequeue_eicons' );
+        function js_dequeue_eicons() {
+
+            // Don't remove it in the backend
+            if ( is_admin() || current_user_can( 'manage_options' ) ) {
+                return;
+            }
+            wp_dequeue_style( 'elementor-icons' );
+        }
+    }
+
 ///**
 // * Проверка активности плагина на странице плагинов.
 // */
