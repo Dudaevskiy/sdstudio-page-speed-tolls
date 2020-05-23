@@ -1,68 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b14e5ced-b26a-4a56-beb3-b797da6433aa" name="Default Changelist" comment="" />
+    <list default="true" id="09a386a8-a63a-4050-9d02-0e020f93634c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_WORKER.php" beforeDir="false" afterPath="$PROJECT_DIR$/_WORKER.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/class-sdstudio-page-speed-tolls-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/class-sdstudio-page-speed-tolls-admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/css/sdstudio-page-speed-tolls-admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/css/sdstudio-page-speed-tolls-admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/js/sdstudio-page-speed-tolls-admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/js/sdstudio-page-speed-tolls-admin.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-      </list>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1Ww8T57e0zlJIUw5BXmQ4WNMirc" />
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/cebe/markdown" />
+      <path value="$PROJECT_DIR$/../../www/vpninform" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1cItFNAI4dr8RqwaUJrcVJASZvi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\laragon\www\top-podarok\wp-content\plugins\sdstudio-page-speed-tolls\public\css" />
-      <recent name="E:\laragon\www\top-podarok\wp-content\plugins\sdstudio-page-speed-tolls\_Elementor\fonts" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\laragon\www\top-podarok\wp-content\plugins\sdstudio-page-speed-tolls\_Elementor\fonts" />
-      <recent name="E:\laragon\www\top-podarok\wp-content\plugins\sdstudio-page-speed-tolls\public\css" />
-    </key>
+    <property name="node.js.detected.package.jscs" value="true" />
+    <property name="node.js.path.for.package.jscs" value="project" />
+    <property name="node.js.selected.package.jscs" value="" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b14e5ced-b26a-4a56-beb3-b797da6433aa" name="Default Changelist" comment="" />
-      <created>1580049301118</created>
+      <changelist id="09a386a8-a63a-4050-9d02-0e020f93634c" name="Default Changelist" comment="" />
+      <created>1590227830979</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1580049301118</updated>
-      <workItem from="1580049307225" duration="4815000" />
-      <workItem from="1580055761686" duration="13771000" />
+      <updated>1590227830979</updated>
+      <workItem from="1590227833629" duration="10561000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-903" y="457" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580050661369">
-      <screen x="-1280" y="161" width="1280" height="984" />
+    <state x="390" y="14" key="#PHP" timestamp="1590227903256">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="-903" y="457" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1040/-1280.161.1280.984/0.0.1920.1040@-1280.161.1280.984" timestamp="1580050661369" />
+    <state x="390" y="14" key="#PHP/0.0.1366.728@0.0.1366.728" timestamp="1590227903256" />
+    <state x="521" y="295" key="#WordPress" timestamp="1590227897191">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="521" y="295" key="#WordPress/0.0.1366.728@0.0.1366.728" timestamp="1590227897191" />
+    <state x="390" y="97" width="585" height="534" key="find.popup" timestamp="1590233860274">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="390" y="97" width="585" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1590233860274" />
+  </component>
+  <component name="WordPressConfiguration" enabled="true">
+    <wordpressPath>C:\__Laragon\www\vpninform</wordpressPath>
   </component>
 </project>

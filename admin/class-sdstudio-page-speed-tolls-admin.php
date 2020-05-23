@@ -100,4 +100,20 @@ class Sdstudio_Page_Speed_Tolls_Admin {
 
 	}
 
+	/**
+     *
+     */
+    function addCustomJS_FOR_REUX_SDSTUDIO_TABS() {
+//        wp_register_style(
+//            'redux-custom-css',
+//            'http://urltomyfile',
+//            array( 'redux-admin-css' ), // Be sure to include redux-admin-css so it's appended after the core css is applied
+//            time(),
+//            'all'
+//        );
+//        wp_enqueue_style('redux-custom-css');
+        wp_enqueue_scrript('redux-custom-css');
+    }
+    // This example assumes your opt_name is set to redux_demo, replace with your opt_name value
+//    add_action( 'redux/page/redux_sdstudio_page_speed_tolls/enqueue', 'addCustomJS_FOR_REUX_SDSTUDIO_TABS' );
 }

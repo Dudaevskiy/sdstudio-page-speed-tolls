@@ -11,7 +11,7 @@
 //https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js
 
 require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
-require_once plugin_dir_path( __FILE__ ) . 'redux-extensions-loader-master/loader.php';
+
 
 // Путь в корень плагина
 define( 'sdstudio_page_speed_tolls__PLUGIN_DIR' , plugin_dir_path(__FILE__) );
@@ -747,7 +747,7 @@ Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
 /**
  * PRELOAD
  */
-
+require_once plugin_dir_path( __FILE__ ) . 'redux-extensions-loader-master/loader.php';
 $section = [
     'title' => __( 'PRELOADs', 'sdstudio-page-speed-tolls' ),
     'id'    => 'PRELOADs_sdstudio-page-speed-tolls',
@@ -767,30 +767,49 @@ $section = [
             //                                'desc' => '<br><br>',
             'default'  => false,
         ],
-            [
-                //Link: https://docs.redux.io/core-fields/switch.html
-                'id'       => 'FONTS_UPLOAD_PRELOADs_sdstudio-page-speed-tolls',
-//                'id'        => 'opt-multi-media',
-                'type'      => 'multi_media',
-                'title'     => 'Multi Media Selector',
-                'subtitle'  => 'Multi file media selector',
-                'labels'    => [
-                    'upload_file'       => __('Select File(s)', 'redux-framework-demo'),
-                    'remove_image'      => __('Remove Image', 'redux-framework-demo'),
-                    'remove_file'       => __('Remove', 'redux-framework-demo'),
-                    'file'              => __('File: ', 'redux-framework-demo'),
-                    'download'          => __('Download', 'redux-framework-demo'),
-                    'title'             => __('Multi Media Selector', 'redux-framework-demo'),
-                    'button'            => __('Add or Upload File','redux-framework-demo')
-                ],
-                'library_filter'  => ['woff','woff2','jpg','png'],
-                'max_file_upload' => 5,
+        [
+            'id'          => 'opt-slides',
+            'type'        => 'slides',
+//            'title'       => __('Slides Options', 'redux-framework-demo'),
+            'subtitle'    => __('Unlimited slides with drag and drop sortings.', 'redux-framework-demo'),
+            'desc'        => __('This field will store all slides values into a multidimensional array to use into a foreach loop.', 'redux-framework-demo'),
+            'show'          => array(
+                'title'       => true,
+                'description' => true,
+                'url'         => true,
+            ),
+            'placeholder' => [
+                'title'       => __('Имя шрифта', 'redux-framework-demo'),
+                'description' => __('Укажите css стили для прелоада шрифта', 'redux-framework-demo'),
+                'url'         => __('Щелкните здесь для загрузки шрифта', 'redux-framework-demo'),
             ],
+        ],
+
     ],
     'desc'  => __( 'После включения данной опции появляется возможность добавлять изображения, стили, шрифты в предзагрузку страницы. Опция нужна для того что бы избежать "вспышек" текста, изображений и так далее.', 'your-domain-here' ),
 
 ];
 Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
+
+//        ============================================
+
+//Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section, array(
+//$section = [
+//    'id'          => 'opt-slides',
+//    'type'        => 'slides',
+//    'title'       => __('Slides Options', 'redux-framework-demo'),
+//    'subtitle'    => __('Unlimited slides with drag and drop sortings.', 'redux-framework-demo'),
+//    'desc'        => __('This field will store all slides values into a multidimensional array to use into a foreach loop.', 'redux-framework-demo'),
+//    'placeholder' => [
+//    'title'       => __('This is a title', 'redux-framework-demo'),
+//    'description' => __('Description Here', 'redux-framework-demo'),
+//    'url'         => __('Give us a link!', 'redux-framework-demo'),
+//    ],
+//];
+//Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
+//) );
+//        ============================================
+//Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
 /*
  * <--- END SECTIONS
  */

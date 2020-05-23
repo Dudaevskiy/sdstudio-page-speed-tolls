@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData">
+  <component name="PublishConfigData" autoUpload="Always" serverName="clinic.health.sumdu.edu.ua">
     <serverData>
+      <paths name="176.108.235.87 SDStudio FULL">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="DEV 3 PLESK (SDStudio.top)">
         <serverdata>
           <mappings>
@@ -23,6 +30,13 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="SDStudio FULL PLESK 87">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="SDStudio.top  VIrtualMin">
         <serverdata>
           <mappings>
@@ -37,21 +51,28 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="ideisruba">
+      <paths name="TechBlogSD">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="inform.click">
+      <paths name="clinic.health.sumdu.edu.ua">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/httpdocs/wp-content/plugins/sdstudio-page-speed-tolls" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="dev-it-info.ctois.sumdu.edu.ua">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="inform.click PLESK">
+      <paths name="informClick PLESK">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
@@ -59,5 +80,6 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
