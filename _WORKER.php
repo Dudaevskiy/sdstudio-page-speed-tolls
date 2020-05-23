@@ -582,6 +582,9 @@ $section = [
     // http://elusiveicons.com/icons/
     'icon'  => 'el el-eye-open',
     'fields' => [
+        /**
+         * SAXON
+         */
         [
             //Link: https://docs.redux.io/core-fields/switch.html
             'id'       => 'FIXES_THEMES__SAXON_sdstudio-page-speed-tolls',
@@ -605,6 +608,33 @@ $section = [
                 //                                'desc' => '<br><br>',
                 'default'  => false,
             ],
+
+        /**
+         * ASTRA
+         */
+        [
+            //Link: https://docs.redux.io/core-fields/switch.html
+            'id'       => 'FIXES_THEMES__ASTRA_sdstudio-page-speed-tolls',
+            'type'     => 'switch',
+            'title'    => __('Astra', 'sdstudio-page-speed-tolls'),
+//            'subtitle' => $img_drafts,
+            'desc'  => __('Влючить фиксы для темы Astra. Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
+//                'required' => array('enable_sweetalert2', '=', 'true' ),
+            //                                'desc' => '<br><br>',
+            'default'  => false,
+        ],
+            [
+                //Link: https://docs.redux.io/core-fields/switch.html
+                'id'       => 'FIXES_THEMES_Disable_astra_font_ASTRA_sdstudio-page-speed-tolls',
+                'type'     => 'switch',
+                'title'    => __('Astra - Отключить шрифт astra.woff', 'sdstudio-page-speed-tolls'),
+    //            'subtitle' => $img_drafts,
+                'desc'  => __('После включения опции, штатный шрифт astra.woff темы астра будет отключен. Место иконок используемых в нем будут подставлены иконки Font Awesome. Все стили находятся в файле данного плагина _SDStudio_THEMES_FIXs__ASTRA.css. Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
+                    'required' => array('FIXES_THEMES__ASTRA_sdstudio-page-speed-tolls', '=', 'true' ),
+                //                                'desc' => '<br><br>',
+                'default'  => false,
+            ],
+
 
     ],
 //    'desc'  => __( 'После включения данной опции появляется возможность поиска и замены .jpg,.jpeg,.png путей к изображениям во всем HTML страницы. Все выполняется перед отображением страницы в браузере. ', 'your-domain-here' ),
