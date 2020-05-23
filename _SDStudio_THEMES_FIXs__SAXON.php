@@ -13,7 +13,7 @@ $FIXES_THEMES__SAXON_icons2_woff2_sdstudio_page_speed_tolls = $redux['FIXES_THEM
 
 if ($FIXES_THEMES__SAXON_icons2_woff2_sdstudio_page_speed_tolls == 1){
 
-    add_action('wp_head', 'FIXES_THEMES__SAXON_icons2_woff2_sdstudio_page_speed_tolls', 100);
+//    add_action('wp_head', 'FIXES_THEMES__SAXON_icons2_woff2_sdstudio_page_speed_tolls', 100);
     function FIXES_THEMES__SAXON_icons2_woff2_sdstudio_page_speed_tolls()
     {
         $SDStudio_cur_domain = $_SERVER['SERVER_NAME'];
@@ -50,9 +50,9 @@ if ($FIXES_THEMES__SAXON_icons2_woff2_sdstudio_page_speed_tolls == 1){
                     }
               </style>";
 
-        echo "<link rel=\"preload\" href=\"https://".$SDStudio_cur_domain."/wp-content/plugins/ajax-search-pro/css/fonts/icons/icons2.woff2\" as=\"font\" type=\"font/woff2\" crossorigin>";
-        echo "<link rel=\"preload\" href=\"https://".$SDStudio_cur_domain."/wp-content/themes/saxon/fonts/fontawesome-webfont.woff2\" as=\"font\" type=\"font/woff2\" crossorigin>";
-        echo "<link rel=\"preload\" href=\"https://".$SDStudio_cur_domain."/wp-content/plugins/popups/public/assets/fonts/spufont.woff\" as=\"font\" type=\"font/woff\" crossorigin>";
+//        echo "<link rel=\"preload\" href=\"https://".$SDStudio_cur_domain."/wp-content/plugins/ajax-search-pro/css/fonts/icons/icons2.woff2\" as=\"font\" type=\"font/woff2\" crossorigin>";
+//        echo "<link rel=\"preload\" href=\"https://".$SDStudio_cur_domain."/wp-content/themes/saxon/fonts/fontawesome-webfont.woff2\" as=\"font\" type=\"font/woff2\" crossorigin>";
+//        echo "<link rel=\"preload\" href=\"https://".$SDStudio_cur_domain."/wp-content/plugins/popups/public/assets/fonts/spufont.woff\" as=\"font\" type=\"font/woff\" crossorigin>";
 //        echo "<link rel=\"preload\" href=\"https://".$SDStudio_cur_domain."/wp-content/plugins/ajax-search-pro/css/fonts/icons/icons2.woff2&display=swap\" as=\"font\" type=\"font/woff2\" crossorigin>";
 
     }

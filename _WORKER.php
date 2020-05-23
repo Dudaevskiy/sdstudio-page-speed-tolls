@@ -11,6 +11,7 @@
 //https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js
 
 require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+require_once plugin_dir_path( __FILE__ ) . 'redux-extensions-loader-master/loader.php';
 
 // Путь в корень плагина
 define( 'sdstudio_page_speed_tolls__PLUGIN_DIR' , plugin_dir_path(__FILE__) );
@@ -413,132 +414,66 @@ Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
 //$OO1_Saxon_icons2 = '<img src="'.$MarkDownImageFolder_sdstudio_page_speed_tolls.'001_Saxon_icons2.woff2.jpg">';
 //dd($OO1_Saxon_icons2);
 //$img_drafts_front = '<img src="'.$MarkDownImageFolder_sdstudio_page_speed_tolls.'drafts_frontend.jpg">';
-$section = [
-    'title' => __( 'Поиск и замена в RAW теле страницы', 'sdstudio-page-speed-tolls' ),
-    'id'    => 'BUFFER_SEARCH_AND_REPLACE_sdstudio-page-speed-tolls',
-    'subsection' => false,
-    // Иконки брать здесь
-    // http://elusiveicons.com/icons/
-    'icon'  => 'el el-screenshot',
-    'fields' => [
-        [
-            //Link: https://docs.redux.io/core-fields/switch.html
-            'id'       => 'ENABLE_BUFFER_SEARCH_AND_REPLACE_sdstudio-page-speed-tolls',
-            'type'     => 'switch',
-            'title'    => __('Включить поиск и замену в теле страницы', 'sdstudio-page-speed-tolls'),
-//            'subtitle' => $img_drafts,
-            'desc'  => __('Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
-//                'required' => array('enable_sweetalert2', '=', 'true' ),
-            //                                'desc' => '<br><br>',
-            'default'  => false,
-        ],
 
-    ],
-    'desc'  => __( 'После включения жданной опции появляется возможность поиска и замены во всем HTML страницы, прямо перед отображением её в браузере. ', 'your-domain-here' ),
 
-];
-Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
+
+
+//$section = [
+//    'title' => __( 'Поиск и замена в RAW теле страницы', 'sdstudio-page-speed-tolls' ),
+//    'id'    => 'BUFFER_SEARCH_AND_REPLACE_sdstudio-page-speed-tolls',
+//    'subsection' => false,
+//    // Иконки брать здесь
+//    // http://elusiveicons.com/icons/
+//    'icon'  => 'el el-screenshot',
+//    'fields' => [
+//        [
+//            //Link: https://docs.redux.io/core-fields/switch.html
+//            'id'       => 'ENABLE_BUFFER_SEARCH_AND_REPLACE_sdstudio-page-speed-tolls',
+//            'type'     => 'switch',
+//            'title'    => __('Включить поиск и замену в теле страницы', 'sdstudio-page-speed-tolls'),
+////            'subtitle' => $img_drafts,
+//            'desc'  => __('Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
+////                'required' => array('enable_sweetalert2', '=', 'true' ),
+//            //                                'desc' => '<br><br>',
+//            'default'  => false,
+//        ],
+//
+//    ],
+//    'desc'  => __( 'После включения жданной опции появляется возможность поиска и замены во всем HTML страницы, прямо перед отображением её в браузере. ', 'your-domain-here' ),
+//
+//];
+//Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
 
 /**
  * WEBP
  */
 
-$section = [
-    'title' => __( 'Все для WebP ', 'sdstudio-page-speed-tolls' ),
-    'id'    => 'WEBP_sdstudio-page-speed-tolls',
-    'subsection' => false,
-    // Иконки брать здесь
-    // http://elusiveicons.com/icons/
-    'icon'  => 'el el-picture',
-    'fields' => [
-        [
-            //Link: https://docs.redux.io/core-fields/switch.html
-            'id'       => 'ENABLE_WEBP_sdstudio-page-speed-tolls',
-            'type'     => 'switch',
-            'title'    => __('Включить перезапись CSS фонов в теле HTML', 'sdstudio-page-speed-tolls'),
-//            'subtitle' => $img_drafts,
-            'desc'  => __('После активации все фоновые изображения которые присутствуют в HTML верстке документа, будут иметь окончание .webp. Например ранее блок был: <code>style="background-image: url(https://exemple.com/wp-content/uploads/2020/05/glass-number-color-bead-circle-blogging-919915-pxhere.com_-555x360.jpg);"</code> посе применения функции блок будет выглядеть так: <code>style="background-image: url(https://exemple.com/wp-content/uploads/2020/05/glass-number-color-bead-circle-blogging-919915-pxhere.com_-555x360.jpg.webp);"</code> .Для включения установите переключатель в положение "On". По умолчанию опция выключена.<br><b>Данную опцию стоит включать только в случае полной уверенности в том что на сайте активен плагин который конвертирует все изображения в webp</b>. Например такой как <a target="_blank" href="https://ru.wordpress.org/plugins/ewww-image-optimizer/">EWWW Image Optimizer</a>', 'sdstudio-page-speed-tolls'),
-//                'required' => array('enable_sweetalert2', '=', 'true' ),
-            //                                'desc' => '<br><br>',
-            'default'  => false,
-        ],
+//$section = [
+//    'title' => __( 'Все для WebP ', 'sdstudio-page-speed-tolls' ),
+//    'id'    => 'WEBP_sdstudio-page-speed-tolls',
+//    'subsection' => false,
+//    // Иконки брать здесь
+//    // http://elusiveicons.com/icons/
+//    'icon'  => 'el el-picture',
+//    'fields' => [
+//        [
+//            //Link: https://docs.redux.io/core-fields/switch.html
+//            'id'       => 'ENABLE_WEBP_sdstudio-page-speed-tolls',
+//            'type'     => 'switch',
+//            'title'    => __('Включить перезапись CSS фонов в теле HTML', 'sdstudio-page-speed-tolls'),
+////            'subtitle' => $img_drafts,
+//            'desc'  => __('После активации все фоновые изображения которые присутствуют в HTML верстке документа, будут иметь окончание .webp. Например ранее блок был: <code>style="background-image: url(https://exemple.com/wp-content/uploads/2020/05/glass-number-color-bead-circle-blogging-919915-pxhere.com_-555x360.jpg);"</code> посе применения функции блок будет выглядеть так: <code>style="background-image: url(https://exemple.com/wp-content/uploads/2020/05/glass-number-color-bead-circle-blogging-919915-pxhere.com_-555x360.jpg.webp);"</code> .Для включения установите переключатель в положение "On". По умолчанию опция выключена.<br><b>Данную опцию стоит включать только в случае полной уверенности в том что на сайте активен плагин который конвертирует все изображения в webp</b>. Например такой как <a target="_blank" href="https://ru.wordpress.org/plugins/ewww-image-optimizer/">EWWW Image Optimizer</a>', 'sdstudio-page-speed-tolls'),
+////                'required' => array('enable_sweetalert2', '=', 'true' ),
+//            //                                'desc' => '<br><br>',
+//            'default'  => false,
+//        ],
+//
+//    ],
+//    'desc'  => __( 'После включения данной опции появляется возможность поиска и замены .jpg,.jpeg,.png путей к изображениям во всем HTML страницы. Все выполняется перед отображением страницы в браузере. ', 'your-domain-here' ),
+//
+//];
+//Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
 
-    ],
-    'desc'  => __( 'После включения данной опции появляется возможность поиска и замены .jpg,.jpeg,.png путей к изображениям во всем HTML страницы. Все выполняется перед отображением страницы в браузере. ', 'your-domain-here' ),
-
-];
-Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
-/**
- * Фиксы для плагинов
- */
-$section = [
-    'title' => __( 'Фиксы для плагинов', 'sdstudio-page-speed-tolls' ),
-    'id'    => 'FIXES_PLUGINS_sdstudio-page-speed-tolls',
-    'subsection' => false,
-    // Иконки брать здесь
-    // http://elusiveicons.com/icons/
-    'icon'  => 'el el-puzzle',
-    'fields' => [
-        [
-            /**
-             * Highlight_and_Share
-             */
-
-            //Link: https://docs.redux.io/core-fields/switch.html
-            'id'       => 'ENABLE_FIXES_PLUGINS_Highlight_and_Share_sdstudio-page-speed-tolls',
-            'type'     => 'switch',
-            'title'    => __('Highlight and Share', 'sdstudio-page-speed-tolls'),
-//            'subtitle' => $img_drafts,
-            'desc'  => __('Дополнительные фикс для плагина Highlight and Share.Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
-//                'required' => array('enable_sweetalert2', '=', 'true' ),
-            //                                'desc' => '<br><br>',
-            'default'  => false,
-        ],
-            [
-                //Link: https://docs.redux.io/core-fields/switch.html
-                'id'       => 'ENABLE_FIXES_PLUGINS_Highlight_and_Share_DISABLE_SA2_sdstudio-page-speed-tolls',
-                'type'     => 'switch',
-                'title'    => __('Highlight and Share -  Отключить Sweet Alert 2 используемый плагином', 'sdstudio-page-speed-tolls'),
-
-                'desc'  => __('К сожалению разработчики плагина  Highlight and Share используют устаревшую библиотеку SweetAlert2 которая часто вызывает ошибки на странице. При активации данной опции библиотека SweetAlert2 используемая плагином  Highlight and Share будет заменена на актуальную версию. Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
-                    'required' => array('ENABLE_FIXES_PLUGINS_Highlight_and_Share_sdstudio-page-speed-tolls', '=', 'true' ),
-                //                                'desc' => '<br><br>',
-                'default'  => false,
-            ],
-            [
-                //Link: https://docs.redux.io/core-fields/switch.html
-                'id'       => 'ENABLE_FIXES_PLUGINS_Highlight_and_Share_DISABLE_Uncaught_SyntaxError_sdstudio-page-speed-tolls',
-                'type'     => 'switch',
-                'title'    => __('Highlight and Share -  Устранить ошибку "Uncaught SyntaxError: missing ) after argument list"', 'sdstudio-page-speed-tolls'),
-
-                'desc'  => __('Часто при использовании плагина он генерирует ошибку "Uncaught SyntaxError: missing ) after argument list", данная ошибка иногда ломает верстку сайта. После активации функции ошибка больше не появится в консоли. Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
-                    'required' => array('ENABLE_FIXES_PLUGINS_Highlight_and_Share_sdstudio-page-speed-tolls', '=', 'true' ),
-                //                                'desc' => '<br><br>',
-                'default'  => false,
-            ],
-
-
-        [
-            /**
-             * Popups
-             */
-
-            //Link: https://docs.redux.io/core-fields/switch.html
-            'id'       => 'ENABLE_FIXES_PLUGINS_Popups_sdstudio-page-speed-tolls',
-            'type'     => 'switch',
-            'title'    => __('Popups - Отключить шрифт spufont.woff плагина', 'sdstudio-page-speed-tolls'),
-//            'subtitle' => $img_drafts,
-            'desc'  => __('Дополнительные фикс для плагина Popups. Для отключения стандартного файла стилей, в котором используется шрифт spufont.woff. Файл мелкий, но дает дополнительную нагрузку при получении страницы браузером. Место иконок используемых spufont.woff, в файле данного плагина _SDStudio_PLUGIN_Popus.css прописано правило для использования шрифта Font Awesome 5. Ну и изменены стили только для кнопкти закрытия попап окна. Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
-//                'required' => array('enable_sweetalert2', '=', 'true' ),
-            //                                'desc' => '<br><br>',
-            'default'  => false,
-        ],
-
-    ],
-    'desc'  => __( 'Дополнительные фиксы к разным плагинам, для ускорения, или устранения ошибок связанных с ними ', 'your-domain-here' ),
-
-];
-Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
 
 
 /**
@@ -569,6 +504,79 @@ $section = [
 
 ];
 Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
+
+/**
+ * PLUGINs FIXs - Фиксы для плагинов
+ */
+$section = [
+    'title' => __( 'PLUGINs FIXs', 'sdstudio-page-speed-tolls' ),
+    'id'    => 'FIXES_PLUGINS_sdstudio-page-speed-tolls',
+    'subsection' => false,
+    // Иконки брать здесь
+    // http://elusiveicons.com/icons/
+    'icon'  => 'el el-puzzle',
+    'fields' => [
+        [
+            /**
+             * Highlight_and_Share
+             */
+
+            //Link: https://docs.redux.io/core-fields/switch.html
+            'id'       => 'ENABLE_FIXES_PLUGINS_Highlight_and_Share_sdstudio-page-speed-tolls',
+            'type'     => 'switch',
+            'title'    => __('Highlight and Share', 'sdstudio-page-speed-tolls'),
+//            'subtitle' => $img_drafts,
+            'desc'  => __('Дополнительные фикс для плагина Highlight and Share.Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
+//                'required' => array('enable_sweetalert2', '=', 'true' ),
+            //                                'desc' => '<br><br>',
+            'default'  => false,
+        ],
+        [
+            //Link: https://docs.redux.io/core-fields/switch.html
+            'id'       => 'ENABLE_FIXES_PLUGINS_Highlight_and_Share_DISABLE_SA2_sdstudio-page-speed-tolls',
+            'type'     => 'switch',
+            'title'    => __('Highlight and Share -  Отключить Sweet Alert 2 используемый плагином', 'sdstudio-page-speed-tolls'),
+
+            'desc'  => __('К сожалению разработчики плагина  Highlight and Share используют устаревшую библиотеку SweetAlert2 которая часто вызывает ошибки на странице. При активации данной опции библиотека SweetAlert2 используемая плагином  Highlight and Share будет заменена на актуальную версию. Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
+            'required' => array('ENABLE_FIXES_PLUGINS_Highlight_and_Share_sdstudio-page-speed-tolls', '=', 'true' ),
+            //                                'desc' => '<br><br>',
+            'default'  => false,
+        ],
+        [
+            //Link: https://docs.redux.io/core-fields/switch.html
+            'id'       => 'ENABLE_FIXES_PLUGINS_Highlight_and_Share_DISABLE_Uncaught_SyntaxError_sdstudio-page-speed-tolls',
+            'type'     => 'switch',
+            'title'    => __('Highlight and Share -  Устранить ошибку "Uncaught SyntaxError: missing ) after argument list"', 'sdstudio-page-speed-tolls'),
+
+            'desc'  => __('Часто при использовании плагина он генерирует ошибку "Uncaught SyntaxError: missing ) after argument list", данная ошибка иногда ломает верстку сайта. После активации функции ошибка больше не появится в консоли. Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
+            'required' => array('ENABLE_FIXES_PLUGINS_Highlight_and_Share_sdstudio-page-speed-tolls', '=', 'true' ),
+            //                                'desc' => '<br><br>',
+            'default'  => false,
+        ],
+
+
+        [
+            /**
+             * Popups
+             */
+
+            //Link: https://docs.redux.io/core-fields/switch.html
+            'id'       => 'ENABLE_FIXES_PLUGINS_Popups_sdstudio-page-speed-tolls',
+            'type'     => 'switch',
+            'title'    => __('Popups - Отключить шрифт spufont.woff плагина', 'sdstudio-page-speed-tolls'),
+//            'subtitle' => $img_drafts,
+            'desc'  => __('Дополнительные фикс для плагина Popups. Для отключения стандартного файла стилей, в котором используется шрифт spufont.woff. Файл мелкий, но дает дополнительную нагрузку при получении страницы браузером. Место иконок используемых spufont.woff, в файле данного плагина _SDStudio_PLUGIN_Popus.css прописано правило для использования шрифта Font Awesome 5. Ну и изменены стили только для кнопкти закрытия попап окна. Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
+//                'required' => array('enable_sweetalert2', '=', 'true' ),
+            //                                'desc' => '<br><br>',
+            'default'  => false,
+        ],
+
+    ],
+    'desc'  => __( 'Дополнительные фиксы к разным плагинам, для ускорения, или устранения ошибок связанных с ними ', 'your-domain-here' ),
+
+];
+Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
+
 
 
 /**
@@ -634,6 +642,17 @@ $section = [
                 //                                'desc' => '<br><br>',
                 'default'  => false,
             ],
+            [
+                //Link: https://docs.redux.io/core-fields/switch.html
+                'id'       => 'FIXES_THEMES_Disable_Google_fonts_ASTRA_sdstudio-page-speed-tolls',
+                'type'     => 'switch',
+                'title'    => __('Astra - Отключить Google fonts шрифты', 'sdstudio-page-speed-tolls'),
+    //            'subtitle' => $img_drafts,
+                'desc'  => __('После включения опции, будут отключены Google fonts шрифты которые вызывает сама тема астра. По хорошему, данная опция нужна уже перед продакшеном, и соответственно наличием шрифтов на сервере. Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
+                    'required' => array('FIXES_THEMES__ASTRA_sdstudio-page-speed-tolls', '=', 'true' ),
+                //                                'desc' => '<br><br>',
+                'default'  => false,
+            ],
 
 
     ],
@@ -679,17 +698,30 @@ $section = [
             'default'  => false,
         ],
 
+//        [
+//            //Link: https://docs.redux.io/core-fields/switch.html
+//            'id'       => 'DISABLE_Font_Awesome_FIXES_ELEMENTOR_sdstudio-page-speed-tolls',
+//            'type'     => 'switch',
+//            'title'    => __('Отключить шрифты Font Awesome используемые Elementor', 'sdstudio-page-speed-tolls'),
+////                'subtitle' => $OO1_Saxon_icons2,
+//            'desc'  => __('<a href="https://techblog.sdstudio.top/kak-uskorit-rabotu-sajta-elementor-dlja-pagespeed-insights-3-poleznyh-soveta/#1_Ne_zagruzajte_Google_Fonts_ot_Elementor1_Ne_zagruzajte_Google_Fonts_ot_Elementor1_Ne_zagruzajte_Google_Fonts_ot_Elementor" target="_blank">Подробнее здесь</a>. После включения опции, плагин произведет отключенеи шрифтов Font Awesome используемые Elementor, и подключит свой набор шрифтов Font Awesome 5 .Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
+//            'required' => array('ENABLE_FIXES_ELEMENTOR_sdstudio-page-speed-tolls', '=', 'true' ),
+//            //                                'desc' => '<br><br>',
+//            'default'  => false,
+//        ],
+
         [
             //Link: https://docs.redux.io/core-fields/switch.html
-            'id'       => 'DISABLE_Font_Awesome_FIXES_ELEMENTOR_sdstudio-page-speed-tolls',
+            'id'       => 'ENABLE_Preload_Awesome_Fonts_FIXES_ELEMENTOR_sdstudio-page-speed-tolls',
             'type'     => 'switch',
-            'title'    => __('Отключить шрифты Font Awesome используемые Elementor', 'sdstudio-page-speed-tolls'),
+            'title'    => __('Включить прилоад Font Awesome шрифтов которые использует Elementor во фронтеде', 'sdstudio-page-speed-tolls'),
 //                'subtitle' => $OO1_Saxon_icons2,
-            'desc'  => __('<a href="https://techblog.sdstudio.top/kak-uskorit-rabotu-sajta-elementor-dlja-pagespeed-insights-3-poleznyh-soveta/#1_Ne_zagruzajte_Google_Fonts_ot_Elementor1_Ne_zagruzajte_Google_Fonts_ot_Elementor1_Ne_zagruzajte_Google_Fonts_ot_Elementor" target="_blank">Подробнее здесь</a>. После включения опции, плагин произведет отключенеи шрифтов Font Awesome используемые Elementor, и подключит свой набор шрифтов Font Awesome 5 .Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
+            'desc'  => __('Поле активации опции в heder\'e страницы будут добавлены теги preload шрифтам Font Awesome 5 которые имеются в плагине Elementor. Для того что бы избавиться от эффекта "вспышки" во время загрузки страницы. Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
             'required' => array('ENABLE_FIXES_ELEMENTOR_sdstudio-page-speed-tolls', '=', 'true' ),
             //                                'desc' => '<br><br>',
             'default'  => false,
         ],
+
 
         [
             //Link: https://docs.redux.io/core-fields/switch.html
@@ -710,6 +742,55 @@ $section = [
 Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
 
 
+
+
+/**
+ * PRELOAD
+ */
+
+$section = [
+    'title' => __( 'PRELOADs', 'sdstudio-page-speed-tolls' ),
+    'id'    => 'PRELOADs_sdstudio-page-speed-tolls',
+    'subsection' => false,
+    // Иконки брать здесь
+    // http://elusiveicons.com/icons/
+    'icon'  => 'el el-eye-open',
+    'fields' => [
+        [
+            //Link: https://docs.redux.io/core-fields/switch.html
+            'id'       => 'ENABLE_PRELOADs_sdstudio-page-speed-tolls',
+            'type'     => 'switch',
+            'title'    => __('Активировать предзагрузку', 'sdstudio-page-speed-tolls'),
+//            'subtitle' => $img_drafts,
+            'desc'  => __('Здесь добавляем и работаем со всем что нужно загрузить перед отображением страницы в браузере', 'sdstudio-page-speed-tolls'),
+//                'required' => array('enable_sweetalert2', '=', 'true' ),
+            //                                'desc' => '<br><br>',
+            'default'  => false,
+        ],
+            [
+                //Link: https://docs.redux.io/core-fields/switch.html
+                'id'       => 'FONTS_UPLOAD_PRELOADs_sdstudio-page-speed-tolls',
+//                'id'        => 'opt-multi-media',
+                'type'      => 'multi_media',
+                'title'     => 'Multi Media Selector',
+                'subtitle'  => 'Multi file media selector',
+                'labels'    => [
+                    'upload_file'       => __('Select File(s)', 'redux-framework-demo'),
+                    'remove_image'      => __('Remove Image', 'redux-framework-demo'),
+                    'remove_file'       => __('Remove', 'redux-framework-demo'),
+                    'file'              => __('File: ', 'redux-framework-demo'),
+                    'download'          => __('Download', 'redux-framework-demo'),
+                    'title'             => __('Multi Media Selector', 'redux-framework-demo'),
+                    'button'            => __('Add or Upload File','redux-framework-demo')
+                ],
+                'library_filter'  => ['woff','woff2','jpg','png'],
+                'max_file_upload' => 5,
+            ],
+    ],
+    'desc'  => __( 'После включения данной опции появляется возможность добавлять изображения, стили, шрифты в предзагрузку страницы. Опция нужна для того что бы избежать "вспышек" текста, изображений и так далее.', 'your-domain-here' ),
+
+];
+Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
 /*
  * <--- END SECTIONS
  */
