@@ -9,7 +9,93 @@ $redux = get_option( 'redux_sdstudio_page_speed_tolls' );
  */
 global $ENABLE_PRELOADs_sdstudio_page_speed_tolls;
 $ENABLE_PRELOADs_sdstudio_page_speed_tolls = $redux['ENABLE_PRELOADs_sdstudio-page-speed-tolls'];
-//
+
+/**
+ * ENABLE_PRELOADs
+ */
+global $ENABLE_PRELOADs_sdstudio_page_speed_tolls;
+$ENABLE_PRELOADs_sdstudio_page_speed_tolls = $redux['ENABLE_PRELOADs_sdstudio-page-speed-tolls'];
+
+
+if ($ENABLE_PRELOADs_sdstudio_page_speed_tolls == 1){
+
+    /**
+     * CSS PRELOAD INLINE
+     */
+
+    // Обрабатываем вывод стилей
+    global $CSS_PRELOAD_SDStudio_page_speed_tools;
+    $CSS_PRELOAD_SDStudio_page_speed_tools = '<!-- SDStudio Speed Tools - CSS Preload START-->';
+    $CSS_PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<style>';
+        if (isset($redux['css_styles-slides']) && !empty($redux['opt-slides'])) {
+            foreach ($redux['css_styles-slides'] as &$value) {
+                $CSS_PRELOAD_SDStudio_page_speed_tools .= "\r\n /* " . $value['title'] . " */";
+                $CSS_PRELOAD_SDStudio_page_speed_tools .= "\r\n" . $value['description'];
+                //        s($value);
+            }
+            $CSS_PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '</style>';
+            $CSS_PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<!-- SDStudio Speed Tools - CSS Preload END-->';
+        }
+
+        /**
+         * FONTS PRELOAD INLINE
+         */
+        // Обрабатываем вывод шрифтов
+        global $FONTS_PRELOAD_SDStudio_page_speed_tools;
+        $FONTS_PRELOAD_SDStudio_page_speed_tools = '<!-- SDStudio Speed Tools - FONTS Preload START-->';
+        $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n";
+
+        // Узнать расширение файла на PHP
+        function getExtension5($filename) {
+            return array_pop(explode(".", $filename));
+        }
+
+
+        if (isset($redux['css_styles-slides']) && !empty($redux['opt-slides'])) {
+            foreach ($redux['opt-slides'] as &$value) {
+                //  <!-- Comfortaa-regular.woff -->
+                $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n <!-- " . $value['title'] . " -->";
+                // Узнаем расширение шрифта
+                $Extension = getExtension5($value['url']);
+                // Реализуем <link rel="preload" href="" as="font" type="font/{расширенеи файла}" crossorigin="anonymous">
+                $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<link rel="preload" href="'.$value['url'].'" as="font" type="font/'.$Extension.'" crossorigin="anonymous">';
+                $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n";
+            }
+            $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<!-- SDStudio Speed Tools - FONTS Preload END-->';
+            $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n";
+        }
+
+//        dd($FONTS_PRELOAD_SDStudio_page_speed_tools);
+
+
+    // Вставляем стили в тело страницы
+    if (!empty($CSS_PRELOAD_SDStudio_page_speed_tools)){
+        add_action('wp_head', 'PRELOAD_CSS_STYLES_SDStudio',20);
+        function PRELOAD_CSS_STYLES_SDStudio()
+        {
+            global $CSS_PRELOAD_SDStudio_page_speed_tools;
+            global $FONTS_PRELOAD_SDStudio_page_speed_tools;
+
+            echo $CSS_PRELOAD_SDStudio_page_speed_tools;
+            echo $FONTS_PRELOAD_SDStudio_page_speed_tools;
+
+        }
+    }
+//            echo $CSS_PRELOAD_SDStudio_page_speed_tools;
+
+
+        //    echo 'Slide 1 Title: ' . $redux['opt-slides'][0]['title'];
+        //    echo 'Slide 1 Description: ' . $redux['opt-slides'][0]['description'];
+        //    echo 'Slide 1 URL: ' . $redux['opt-slides'][0]['url'];
+        //    echo 'Slide 1 Attachment ID: ' . $redux['opt-slides'][0]['attachment_id'];
+        //    echo 'Slide 1 Thumb: ' . $redux['opt-slides'][0]['thumb'];
+        //    echo 'Slide 1 Image: ' . $redux['opt-slides'][0]['image'];
+        //    echo 'Slide 1 Width: ' . $redux['opt-slides'][0]['width'];
+        //    echo 'Slide 1 Height: ' . $redux['opt-slides'][0]['height'];
+//        }
+//    }
+
+}
 
 if ($ENABLE_PRELOADs_sdstudio_page_speed_tolls == 1){
 

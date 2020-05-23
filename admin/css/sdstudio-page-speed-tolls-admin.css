@@ -6,5 +6,16 @@
  li#wp-admin-bar-wp_mail_bank {
     display: none !important;
 }
-
+/**
+Скрываем UPLOAD для Шрифтов
+ */
+fieldset#redux_sdstudio_page_speed_tolls-opt-slides span.button.media_upload_button{
+    display: none;
+}
+/**
+Скрываем UPLOAD для CSS
+ */
+fieldset#redux_sdstudio_page_speed_tolls-css_styles-slides span.button.media_upload_button{
+    display: none;
+}
 /* #wp-admin-bar-site-name { display:none !important;} */
