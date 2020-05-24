@@ -51,23 +51,109 @@ if ($ENABLE_PRELOADs_sdstudio_page_speed_tolls == 1){
         }
 
 
+
         if (isset($redux['css_styles-slides']) && !empty($redux['opt-slides'])) {
             foreach ($redux['opt-slides'] as &$value) {
                 //  <!-- Comfortaa-regular.woff -->
                 $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n <!-- " . $value['title'] . " -->";
+
                 // Узнаем расширение шрифта
                 $Extension = getExtension5($value['url']);
+                if ($Extension == 'svg'){
+                    $Extension = "as=\"font\" type=\"image/svg+xml\"";
+                } else {
+                    $Extension = "as=\"font\" type=\"font/$Extension\"";
+                }
+
                 // Реализуем <link rel="preload" href="" as="font" type="font/{расширенеи файла}" crossorigin="anonymous">
-                $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<link rel="preload" href="'.$value['url'].'" as="font" type="font/'.$Extension.'" crossorigin="anonymous">';
+                $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<link rel="preload" href="'.$value['url'].'" '.$Extension.' crossorigin="anonymous">';
+                //href="'.$value['image'].'" '.$Extension.' crossorigin="anonymous">';
+//                $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<link rel="preload" href="'.$value['url'].'" as="font" type="font/'.$Extension.'" crossorigin="anonymous">';
                 $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n";
             }
             $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<!-- SDStudio Speed Tools - FONTS Preload END-->';
             $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n";
         }
-
 //        dd($FONTS_PRELOAD_SDStudio_page_speed_tools);
 
+    /**
+     * IMAGES for all pages PRELOAD INLINE
+     */
 
+    global $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools;
+    $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools = '<!-- SDStudio Speed Tools - IMAGES for all pages START-->';
+    $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools .= "\r\n";
+
+
+    if (isset($redux['sdstudio_page_speed_tools_images_for_all_pages_opt-slides'])) {
+        foreach ($redux['sdstudio_page_speed_tools_images_for_all_pages_opt-slides'] as &$value) {
+            //  <!-- Comfortaa-regular.woff -->
+            $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools .= "\r\n <!-- " . $value['title'] . " -->";
+
+            // Если изображение не установлено то используем кастомный URL
+            if (empty($value['image'])){
+                $value['image'] = $value['url'];
+            }
+            // Узнаем расширение изображения
+            $Extension = getExtension5($value['image']);
+
+            if ($Extension == 'svg'){
+                $Extension = "as=\"image\" type=\"image/svg+xml\"";
+            } else {
+                $Extension = "as=\"image\" type=\"image/$Extension\"";
+            }
+
+            // Реализуем <link rel="preload" href="*" as="font" type="image/svg+xml" crossorigin="anonymous">
+            $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<link rel="preload" href="'.$value['image'].'" '.$Extension.' crossorigin="anonymous">';
+            $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools .= "\r\n";
+        }
+        $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<!-- SDStudio Speed Tools - IMAGES for all pages END-->';
+        $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools .= "\r\n";
+    }
+
+
+
+    /**
+     * 📌 IMAGES INLY FOR MAIN PRELOAD INLINE
+     */
+
+    global $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools;
+    $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools = '<!-- SDStudio Speed Tools - ONLY FOR MAIN PAGE START-->';
+    $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools .= "\r\n";
+
+
+    if (isset($redux['sdstudio_page_speed_tools_images_ONLY_FOR_MAIN_page_opt-slides'])) {
+        foreach ($redux['sdstudio_page_speed_tools_images_ONLY_FOR_MAIN_page_opt-slides'] as &$value) {
+            //  <!-- Comfortaa-regular.woff -->
+            $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools .= "\r\n <!-- " . $value['title'] . " -->";
+
+            // Если изображение не установлено то используем кастомный URL
+            if (empty($value['image'])){
+                $value['image'] = $value['url'];
+            }
+
+            // Узнаем расширение изображения
+            $Extension = getExtension5($value['image']);
+            if ($Extension == 'svg'){
+                $Extension = "as=\"image\" type=\"image/svg+xml\"";
+            } else {
+                $Extension = "as=\"image\" type=\"image/$Extension\"";
+            }
+
+            // Реализуем <link rel="preload" href="*" as="font" type="image/svg+xml" crossorigin="anonymous">
+            $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<link rel="preload" href="'.$value['image'].'" '.$Extension.' crossorigin="anonymous">';
+            $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools .= "\r\n";
+        }
+        $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<!-- SDStudio Speed Tools - ONLY FOR MAIN PAGE END-->';
+        $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools .= "\r\n";
+    }
+
+//    dd($IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools);
+
+
+    /**
+     * HTML PASTED for all pages
+     */
     // Вставляем стили в тело страницы
     if (!empty($CSS_PRELOAD_SDStudio_page_speed_tools)){
         add_action('wp_head', 'PRELOAD_CSS_STYLES_SDStudio',20);
@@ -75,11 +161,54 @@ if ($ENABLE_PRELOADs_sdstudio_page_speed_tolls == 1){
         {
             global $CSS_PRELOAD_SDStudio_page_speed_tools;
             global $FONTS_PRELOAD_SDStudio_page_speed_tools;
+            global $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools;
 
-            echo $CSS_PRELOAD_SDStudio_page_speed_tools;
-            echo $FONTS_PRELOAD_SDStudio_page_speed_tools;
+            if (!empty($CSS_PRELOAD_SDStudio_page_speed_tools)){
+                echo $CSS_PRELOAD_SDStudio_page_speed_tools;
+            }
+
+            if (!empty($FONTS_PRELOAD_SDStudio_page_speed_tools)){
+                echo $FONTS_PRELOAD_SDStudio_page_speed_tools;
+            }
+
+            if (!empty($IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools)){
+                echo $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools;
+            }
+
 
         }
+    }
+
+
+    /**
+     * HTML PASTED ONLY FOR MAIN PAGE
+     */
+    // Вставляем стили в тело страницы
+    global $wp_query;
+    global $post;
+
+    add_action('wp', function () {
+
+        if (is_front_page()) {
+//            s('wedfw');
+//            global $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools;
+//            s($IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools);
+            add_action('wp_head', 'CSS_PRELOAD_ONLY_FOR_MAIN_PAGE_SDStudio_page_speed_tools',25);
+            function CSS_PRELOAD_ONLY_FOR_MAIN_PAGE_SDStudio_page_speed_tools()
+            {
+                global $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools;
+
+                if (!empty($IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools)){
+                    echo $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools;
+                }
+            }
+        }
+    });
+
+
+    if (!empty($IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools) && is_front_page()){
+//        dd($IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools);
+
     }
 //            echo $CSS_PRELOAD_SDStudio_page_speed_tools;
 

@@ -775,8 +775,20 @@ $section = [
             'id'          => 'css_styles-slides',
             'type'        => 'slides',
             'title'       => __('CSS стили для прелоада', 'redux-framework-demo'),
-            'subtitle'    => __('Unlimited slides with drag and drop sortings.', 'redux-framework-demo'),
-            'desc'        => __('This field will store all slides values into a multidimensional array to use into a foreach loop.', 'redux-framework-demo'),
+            'subtitle'    => "
+            Эталон для вставки стилей:
+            <pre>
+    @font-face {
+        font-family: 'Open Sans';
+        font-display: swap !important;
+        src: url('https://ДОМЕН/wp-content/uploads/2020/05/opensans-regular.woff2') format('woff2'),
+            url('https://ДОМЕН/wp-content/uploads/2020/05/opensans-regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+           </pre>
+            ",
+//            'desc'        => __('This field will store all slides values into a multidimensional array to use into a foreach loop.', 'redux-framework-demo'),
             'required' => array('ENABLE_PRELOADs_sdstudio-page-speed-tolls', '=', 'true' ),
             'show'          => array(
                 'title'       => true,
@@ -798,8 +810,8 @@ $section = [
             'id'          => 'opt-slides',
             'type'        => 'slides',
             'title'       => __('Шрифты для локального размещения и прелоада', 'redux-framework-demo'),
-            'subtitle'    => __('Unlimited slides with drag and drop sortings.', 'redux-framework-demo'),
-            'desc'        => __('This field will store all slides values into a multidimensional array to use into a foreach loop.', 'redux-framework-demo'),
+            'subtitle'    => __('Данный раздел создан для локального расположения шрифтов.', 'redux-framework-demo'),
+//            'desc'        => __('This field will store all slides values into a multidimensional array to use into a foreach loop.', 'redux-framework-demo'),
             'required' => array('ENABLE_PRELOADs_sdstudio-page-speed-tolls', '=', 'true' ),
             'show'          => array(
                 'title'       => true,
@@ -810,6 +822,50 @@ $section = [
                 'title'       => __('Имя шрифта', 'redux-framework-demo'),
                 'description' => __('Укажите css стили для прелоада шрифта', 'redux-framework-demo'),
                 'url'         => __('Щелкните здесь для загрузки шрифта', 'redux-framework-demo'),
+            ],
+        ],
+
+        /**
+         * Изображения для каждой страницы
+         */
+        [
+            'id'          => 'sdstudio_page_speed_tools_images_for_all_pages_opt-slides',
+            'type'        => 'slides',
+            'title'       => __('Изображения для каждой страницы', 'redux-framework-demo'),
+            'subtitle'    => __('Данный раздел создан для указания изображений которые должны быть предварительно загружены перед отображением страницы в браузере. Для исключения эфекта вспышки касаемо изображений', 'redux-framework-demo'),
+            'required' => array('ENABLE_PRELOADs_sdstudio-page-speed-tolls', '=', 'true' ),
+            'show'          => array(
+                'title'       => true,
+                'description' => false,
+                'url'         => false,
+            ),
+            'placeholder' => [
+                'title'       => __('Имя изображения (для удобства организации)', 'redux-framework-demo'),
+//                'description' => __('Укажите css стили для прелоада шрифта', 'redux-framework-demo'),
+//                'url'         => __('Щелкните здесь для загрузки шрифта', 'redux-framework-demo'),
+            ],
+        ],
+
+
+        /**
+         * Изображения ТОЛЬКО ДЛЯ ГЛАВНОЙ страницы сайта
+         */
+        [
+            'id'          => 'sdstudio_page_speed_tools_images_ONLY_FOR_MAIN_page_opt-slides',
+            'type'        => 'slides',
+            'title'       => __('Изображения ТОЛЬКО ДЛЯ ГЛАВНОЙ СТРАНИЦЫ САЙТА', 'redux-framework-demo'),
+            'subtitle'    => __('Данный раздел создан для указания изображений которые должны быть предварительно загружены перед отображением главной страницы в браузере. Для исключения эфекта вспышки касаемо изображений', 'redux-framework-demo'),
+//            'desc'        => __('This field will store all slides values into a multidimensional array to use into a foreach loop.', 'redux-framework-demo'),
+            'required' => array('ENABLE_PRELOADs_sdstudio-page-speed-tolls', '=', 'true' ),
+            'show'          => array(
+                'title'       => true,
+                'description' => false,
+                'url'         => true,
+            ),
+            'placeholder' => [
+                'title'       => __('Имя изображения (для удобства организации)', 'redux-framework-demo'),
+//                'description' => __('Укажите css стили для прелоада шрифта', 'redux-framework-demo'),
+                'url'         => __('Указываем кастомную ссылку, в случае если нет изображения в медиатеке', 'redux-framework-demo'),
             ],
         ],
 
