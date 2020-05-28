@@ -1,5 +1,17 @@
 <?php
 /**
+ * Включаем поддержку загрузки шрифтов
+ */
+function sdstudio_add_webp_mime_type_download_in_preload( $mimes ) {
+    $mimes['woff'] = 'font/woff';
+    $mimes['woff2'] = 'font/woff2';
+    $mimes['ttf'] = 'font/ttf';
+    return $mimes;
+}
+add_filter( 'upload_mimes', 'sdstudio_add_webp_mime_type_download_in_preload' );
+
+
+/**
  * REDUX - Захват опций темы
  */
 $redux = get_option( 'redux_sdstudio_page_speed_tolls' );
@@ -25,6 +37,7 @@ if ($ENABLE_PRELOADs_sdstudio_page_speed_tolls == 1){
 
     // Обрабатываем вывод стилей
     global $CSS_PRELOAD_SDStudio_page_speed_tools;
+//    dd($CSS_PRELOAD_SDStudio_page_speed_tools);
     $CSS_PRELOAD_SDStudio_page_speed_tools = '<!-- SDStudio Speed Tools - CSS Preload START-->';
     $CSS_PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<style>';
         if (isset($redux['css_styles-slides']) && !empty($redux['opt-slides'])) {
@@ -55,23 +68,24 @@ if ($ENABLE_PRELOADs_sdstudio_page_speed_tolls == 1){
         if (isset($redux['css_styles-slides']) && !empty($redux['opt-slides'])) {
             foreach ($redux['opt-slides'] as &$value) {
                 //  <!-- Comfortaa-regular.woff -->
+//                s('TEST');
                 $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n <!-- " . $value['title'] . " -->";
 
                 // Узнаем расширение шрифта
                 $Extension = getExtension5($value['url']);
                 if ($Extension == 'svg'){
-                    $Extension = "as=\"font\" type=\"image/svg+xml\"";
+                    $Extension = "type=\"image/svg+xml\"";
                 } else {
-                    $Extension = "as=\"font\" type=\"font/$Extension\"";
+                    $Extension = "type=\"font/$Extension\"";
                 }
 
                 // Реализуем <link rel="preload" href="" as="font" type="font/{расширенеи файла}" crossorigin="anonymous">
-                $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<link rel="preload" href="'.$value['url'].'" '.$Extension.' crossorigin="anonymous">';
+                $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<link rel="preload" as="font" href="'.$value['url'].'" '.$Extension.' crossorigin="anonymous">';
                 //href="'.$value['image'].'" '.$Extension.' crossorigin="anonymous">';
 //                $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<link rel="preload" href="'.$value['url'].'" as="font" type="font/'.$Extension.'" crossorigin="anonymous">';
                 $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n";
             }
-            $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<!-- SDStudio Speed Tools - FONTS Preload END-->';
+            $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<!-- SDStudio Speed Tools - FONTS Preload END -->';
             $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n";
         }
 //        dd($FONTS_PRELOAD_SDStudio_page_speed_tools);
@@ -80,12 +94,18 @@ if ($ENABLE_PRELOADs_sdstudio_page_speed_tolls == 1){
      * IMAGES for all pages PRELOAD INLINE
      */
 
-    global $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools;
-    $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools = '<!-- SDStudio Speed Tools - IMAGES for all pages START-->';
-    $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools .= "\r\n";
 
 
-    if (isset($redux['sdstudio_page_speed_tools_images_for_all_pages_opt-slides'])) {
+    // Делаем проверку на наличие
+    $sdstudio_page_speed_tools_images_for_all_pages_opt_slides = $redux['sdstudio_page_speed_tools_images_for_all_pages_opt-slides'];
+
+//dd($redux['sdstudio_page_speed_tools_images_for_all_pages_opt-slides']);
+    if (!empty($sdstudio_page_speed_tools_images_for_all_pages_opt_slides['url'])) {
+
+        global $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools;
+        $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools = '<!-- SDStudio Speed Tools - IMAGES for all pages START-->';
+        $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools .= "\r\n";
+
         foreach ($redux['sdstudio_page_speed_tools_images_for_all_pages_opt-slides'] as &$value) {
             //  <!-- Comfortaa-regular.woff -->
             $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools .= "\r\n <!-- " . $value['title'] . " -->";
@@ -116,13 +136,15 @@ if ($ENABLE_PRELOADs_sdstudio_page_speed_tolls == 1){
     /**
      * 📌 IMAGES INLY FOR MAIN PRELOAD INLINE
      */
+    // Делаем проверку на наличие
+    $sdstudio_page_speed_tools_images_ONLY_FOR_MAIN_page_opt_slides = $redux['sdstudio_page_speed_tools_images_ONLY_FOR_MAIN_page_opt-slides'];
 
-    global $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools;
-    $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools = '<!-- SDStudio Speed Tools - ONLY FOR MAIN PAGE START-->';
-    $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools .= "\r\n";
+    if (!empty($sdstudio_page_speed_tools_images_ONLY_FOR_MAIN_page_opt_slides['url'])) {
+        global $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools;
+        $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools = '<!-- SDStudio Speed Tools - ONLY FOR MAIN PAGE START-->';
+        $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools .= "\r\n";
 
 
-    if (isset($redux['sdstudio_page_speed_tools_images_ONLY_FOR_MAIN_page_opt-slides'])) {
         foreach ($redux['sdstudio_page_speed_tools_images_ONLY_FOR_MAIN_page_opt-slides'] as &$value) {
             //  <!-- Comfortaa-regular.woff -->
             $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools .= "\r\n <!-- " . $value['title'] . " -->";

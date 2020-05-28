@@ -110,6 +110,8 @@ if ($ENABLE_FIXES_ELEMENTOR_sdstudio_page_speed_tolls == 1){
                 return $protocol.$domainName;
             }
             $siteURL = siteURL();
+            $domainName = $_SERVER['HTTP_HOST'];
+//            dd($siteURL);$siteURL
             echo "        
             <style>
             
@@ -138,8 +140,8 @@ if ($ENABLE_FIXES_ELEMENTOR_sdstudio_page_speed_tolls == 1){
             @font-face {
               font-family: 'Font Awesome 5 Brands';
               font-display: swap !important;
-              src: url(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.eot\");
-              src: local(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.woff2\"), url(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.eot?#iefix\") format(\"embedded-opentype\"), url(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.woff2\") format(\"woff2\"), url(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.woff\") format(\"woff\"), url(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.ttf\") format(\"truetype\"), url(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.svg#fontawesome\") format(\"svg\");         
+              src: url(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.eot\");
+              src: local(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.woff2\"), url(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.eot?#iefix\") format(\"embedded-opentype\"), url(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.woff2\") format(\"woff2\"), url(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.woff\") format(\"woff\"), url(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.ttf\") format(\"truetype\"), url(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.svg#fontawesome\") format(\"svg\");         
               font-style: normal;
               font-weight: normal;
               }
@@ -147,8 +149,8 @@ if ($ENABLE_FIXES_ELEMENTOR_sdstudio_page_speed_tolls == 1){
             @font-face {
               font-family: 'Font Awesome 5 Free';
               font-display: swap !important;
-              src: url(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.eot\");
-              src: loacal(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.woff2\"), url(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.woff2\") format(\"woff2\"), url(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.eot?#iefix\") format(\"embedded-opentype\"), url(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.woff\") format(\"woff\"), url(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.ttf\") format(\"truetype\"), url(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.svg#fontawesome\") format(\"svg\");          
+              src: url(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.eot\");
+              src: loacal(\"".$siteURL."/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.woff2\"), url(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.woff2\") format(\"woff2\"), url(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.eot?#iefix\") format(\"embedded-opentype\"), url(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.woff\") format(\"woff\"), url(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.ttf\") format(\"truetype\"), url(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.svg#fontawesome\") format(\"svg\");          
               font-style: normal;
               font-weight: 400;
               
@@ -157,8 +159,8 @@ if ($ENABLE_FIXES_ELEMENTOR_sdstudio_page_speed_tolls == 1){
             @font-face {
               font-family: 'Font Awesome 5 Free';
               font-display: swap !important;
-              src: url(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.eot\");
-              src: local(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.woff2\"), url(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.eot?#iefix\") format(\"embedded-opentype\"), url(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.woff2\") format(\"woff2\"), url(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.woff\") format(\"woff\"), url(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.ttf\") format(\"truetype\"), url(\"/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.svg#fontawesome\") format(\"svg\");          
+              src: url(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.eot\");
+              src: local(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.woff2\"), url(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.eot?#iefix\") format(\"embedded-opentype\"), url(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.woff2\") format(\"woff2\"), url(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.woff\") format(\"woff\"), url(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.ttf\") format(\"truetype\"), url(\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.svg#fontawesome\") format(\"svg\");          
               font-style: normal;
               font-weight: 900;
               
@@ -169,9 +171,9 @@ if ($ENABLE_FIXES_ELEMENTOR_sdstudio_page_speed_tolls == 1){
             
     
     
-        <link rel=\"preload\" href=\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\">
-        <link rel=\"preload\" href=\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\">
-        <link rel=\"preload\" href=\"".$siteURL."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\">";
+        <link rel=\"preload\" href=\"//".$domainName."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\">
+        <link rel=\"preload\" href=\"//".$domainName."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\">
+        <link rel=\"preload\" href=\"//".$domainName."/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-brands-400.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\">";
             //prefetch
         }
     }
