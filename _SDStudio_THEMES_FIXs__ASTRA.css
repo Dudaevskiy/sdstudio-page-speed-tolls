@@ -47,8 +47,8 @@
     font-weight: 800;
 }
 
-body .main-header-bar .main-header-bar-navigation .menu-item-has-children>a:after,
-body .main-header-bar .main-header-bar-navigation .page_item_has_children>a:after {
+body:not(.ast-header-break-point) .main-header-bar .main-header-bar-navigation .menu-item-has-children>a:after,
+body:not(.ast-header-break-point) .main-header-bar .main-header-bar-navigation .page_item_has_children>a:after {
     /*content: "\f106" !Important;*/
     content: "\f107" !Important;
     display: inline-block;
@@ -68,5 +68,6 @@ body .main-header-bar .main-header-bar-navigation .page_item_has_children>a:afte
     content: "\f106" !Important;
     font-family:  "Font Awesome 5 Free" !Important;
     text-decoration: inherit;
-    display: inline-block
+    display: inline-block;
+    transform: rotate(180deg);
 }
