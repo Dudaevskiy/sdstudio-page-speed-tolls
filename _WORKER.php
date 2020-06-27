@@ -747,7 +747,9 @@ Redux::set_section( $opt_name__redux_sdstudio_page_speed_tolls, $section );
 /**
  * PRELOAD
  */
-require_once plugin_dir_path( __FILE__ ) . 'redux-extensions-loader-master/loader.php';
+if (!function_exists('redux_register_custom_extension_loader')) {
+    //require_once plugin_dir_path(__FILE__) . 'redux-extensions-loader-master/loader.php';
+}
 $section = [
     'title' => __( 'PRELOADs', 'sdstudio-page-speed-tolls' ),
     'id'    => 'PRELOADs_sdstudio-page-speed-tolls',
