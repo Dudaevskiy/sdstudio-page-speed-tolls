@@ -698,29 +698,18 @@ $section = [
             'default'  => false,
         ],
 
-//        [
-//            //Link: https://docs.redux.io/core-fields/switch.html
-//            'id'       => 'DISABLE_Font_Awesome_FIXES_ELEMENTOR_sdstudio-page-speed-tolls',
-//            'type'     => 'switch',
-//            'title'    => __('Отключить шрифты Font Awesome используемые Elementor', 'sdstudio-page-speed-tolls'),
-////                'subtitle' => $OO1_Saxon_icons2,
-//            'desc'  => __('<a href="https://techblog.sdstudio.top/kak-uskorit-rabotu-sajta-elementor-dlja-pagespeed-insights-3-poleznyh-soveta/#1_Ne_zagruzajte_Google_Fonts_ot_Elementor1_Ne_zagruzajte_Google_Fonts_ot_Elementor1_Ne_zagruzajte_Google_Fonts_ot_Elementor" target="_blank">Подробнее здесь</a>. После включения опции, плагин произведет отключенеи шрифтов Font Awesome используемые Elementor, и подключит свой набор шрифтов Font Awesome 5 .Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
-//            'required' => array('ENABLE_FIXES_ELEMENTOR_sdstudio-page-speed-tolls', '=', 'true' ),
-//            //                                'desc' => '<br><br>',
-//            'default'  => false,
-//        ],
-
         [
             //Link: https://docs.redux.io/core-fields/switch.html
-            'id'       => 'ENABLE_Preload_Awesome_Fonts_FIXES_ELEMENTOR_sdstudio-page-speed-tolls',
+            'id'       => 'BASE64_ENABLE_Preload_Awesome_Fonts_FIXES_ELEMENTOR_sdstudio-page-speed-tolls',
             'type'     => 'switch',
-            'title'    => __('Включить прилоад Font Awesome шрифтов которые использует Elementor во фронтеде', 'sdstudio-page-speed-tolls'),
+            'title'    => __('BASE64 Включить прилоад Font Awesome шрифтов которые использует Elementor во фронтеде (Отключение всех файлов Font Awesome используемых Elementor. И Подключение через плагин SDStudio Page Speed tolls - Шрифты чудесного шрифта будут подключены через base64 в тело страниц сайта )', 'sdstudio-page-speed-tolls'),
 //                'subtitle' => $OO1_Saxon_icons2,
-            'desc'  => __('Поле активации опции в heder\'e страницы будут добавлены теги preload шрифтам Font Awesome 5 которые имеются в плагине Elementor. Для того что бы избавиться от эффекта "вспышки" во время загрузки страницы. Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
+            'desc'  => __('Поле активации опции в heder\'e страницы будут добавлены шрифты Font Awesome 5 которые имеются в плагине Elementor в формате BASE64. Для того что бы избавиться от эффекта "вспышки" во время загрузки страницы. Для включения установите переключатель в положение "On". По умолчанию опция выключена.', 'sdstudio-page-speed-tolls'),
             'required' => array('ENABLE_FIXES_ELEMENTOR_sdstudio-page-speed-tolls', '=', 'true' ),
             //                                'desc' => '<br><br>',
             'default'  => false,
         ],
+
 
 
         [

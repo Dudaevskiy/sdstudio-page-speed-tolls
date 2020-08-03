@@ -36,6 +36,11 @@ https://prometriki.ru/kak-pravilno-vnedrit-yndeks-metriku-cherez-google-tag-mana
 //Плагин требует, чтобы функция php proc_open была включена на сервере.
  */
 
+// Путь в корень плагина
+define( 'SDSTUDIO_PAGE_SPEED_TOLLS__PLUGIN_DIR' , plugin_dir_path(__FILE__) );
+// URL плагина
+define( 'SDSTUDIO_PAGE_SPEED_TOLLS__PLUGIN_URL' , plugin_dir_url(__FILE__) );
+
 
 /**
  * Имя и версия плагина
@@ -121,7 +126,6 @@ function run_sdstudio_page_speed_tolls() {
     require_once plugin_dir_path( __FILE__ ) . '_SDStudio_PLUGIN_Highlight_and_Share.php';
     require_once plugin_dir_path( __FILE__ ) . '_SDStudio_THEMES_FIXs__ASTRA.php';
     require_once plugin_dir_path( __FILE__ ) . '_SDStudio_THEMES_FIXs__SAXON.php';
-
-
+//    require_once plugin_dir_path( __FILE__ ) . '_SDStudio_BUFFER_search_replace.php';
 }
 run_sdstudio_page_speed_tolls();

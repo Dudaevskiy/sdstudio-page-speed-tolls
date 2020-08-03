@@ -87,6 +87,8 @@ if ($ENABLE_PRELOADs_sdstudio_page_speed_tolls == 1){
             }
             $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<!-- SDStudio Speed Tools - FONTS Preload END -->';
             $FONTS_PRELOAD_SDStudio_page_speed_tools .= "\r\n";
+
+
         }
 //        dd($FONTS_PRELOAD_SDStudio_page_speed_tools);
 
@@ -99,12 +101,14 @@ if ($ENABLE_PRELOADs_sdstudio_page_speed_tolls == 1){
     // Делаем проверку на наличие
     $sdstudio_page_speed_tools_images_for_all_pages_opt_slides = $redux['sdstudio_page_speed_tools_images_for_all_pages_opt-slides'];
 
-//dd($redux['sdstudio_page_speed_tools_images_for_all_pages_opt-slides']);
-    if (!empty($sdstudio_page_speed_tools_images_for_all_pages_opt_slides['url'])) {
 
+//    if (!empty($sdstudio_page_speed_tools_images_for_all_pages_opt_slides['url'] ) || !empty($sdstudio_page_speed_tools_images_for_all_pages_opt_slides['image'])) {
+
+    if (!empty($sdstudio_page_speed_tools_images_for_all_pages_opt_slides[0]['image'])) {
         global $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools;
         $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools = '<!-- SDStudio Speed Tools - IMAGES for all pages START-->';
         $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools .= "\r\n";
+
 
         foreach ($redux['sdstudio_page_speed_tools_images_for_all_pages_opt-slides'] as &$value) {
             //  <!-- Comfortaa-regular.woff -->
@@ -129,6 +133,8 @@ if ($ENABLE_PRELOADs_sdstudio_page_speed_tolls == 1){
         }
         $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<!-- SDStudio Speed Tools - IMAGES for all pages END-->';
         $IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools .= "\r\n";
+
+//        dd($IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools);
     }
 
 
@@ -138,6 +144,7 @@ if ($ENABLE_PRELOADs_sdstudio_page_speed_tolls == 1){
      */
     // Делаем проверку на наличие
     $sdstudio_page_speed_tools_images_ONLY_FOR_MAIN_page_opt_slides = $redux['sdstudio_page_speed_tools_images_ONLY_FOR_MAIN_page_opt-slides'];
+
 
     if (!empty($sdstudio_page_speed_tools_images_ONLY_FOR_MAIN_page_opt_slides['url'])) {
         global $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools;
@@ -168,10 +175,8 @@ if ($ENABLE_PRELOADs_sdstudio_page_speed_tolls == 1){
         }
         $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools .= "\r\n" . '<!-- SDStudio Speed Tools - ONLY FOR MAIN PAGE END-->';
         $IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools .= "\r\n";
+
     }
-
-//    dd($IMAGES_ONLY_FOR_MAIN_PAGE__PRELOAD_SDStudio_page_speed_tools);
-
 
     /**
      * HTML PASTED for all pages
@@ -190,7 +195,14 @@ if ($ENABLE_PRELOADs_sdstudio_page_speed_tolls == 1){
             }
 
             if (!empty($FONTS_PRELOAD_SDStudio_page_speed_tools)){
-                echo $FONTS_PRELOAD_SDStudio_page_speed_tools;
+//                echo $FONTS_PRELOAD_SDStudio_page_speed_tools;
+                /**
+                 * Проверяем на пустоту - $FONTS_PRELOAD_SDStudio_page_speed_tools
+                 */
+//                dd($FONTS_PRELOAD_SDStudio_page_speed_tools);
+                if (!strpos($FONTS_PRELOAD_SDStudio_page_speed_tools, '<link rel="preload" as="font" href="" type="font/" crossorigin="anonymous">')){
+                    echo $FONTS_PRELOAD_SDStudio_page_speed_tools ;
+                }
             }
 
             if (!empty($IMAGES_for_all_pages__PRELOAD_SDStudio_page_speed_tools)){
@@ -200,7 +212,6 @@ if ($ENABLE_PRELOADs_sdstudio_page_speed_tolls == 1){
 
         }
     }
-
 
     /**
      * HTML PASTED ONLY FOR MAIN PAGE
